@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Accident Detection</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .upload-box {
+            background-color: white;
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #d90429;
+            margin-bottom: 1.5rem;
+        }
+        input[type="file"] {
+            margin: 1rem 0;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-box">
+        <h1>Accident Detection System</h1>
+        <form action="/predict/" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="image" required><br><br>
+            <button type="submit" class="btn">Upload & Detect</button>
+        </form>
+    </div>
+</body>
+</html>

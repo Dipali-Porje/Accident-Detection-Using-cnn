@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .result-box {
+            background-color: white;
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        img {
+            width: 400px;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        .alert {
+            padding: 0.8rem;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-top: 1rem;
+            color: white;
+        }
+        .red { background-color: red; }
+        .green { background-color: green; }
+        .btn {
+            margin-top: 1.5rem;
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+    <div class="result-box">
+        <h2>Detection Result</h2>
+        <!-- Use Django template syntax -->
+        <img src="{{ image }}" alt="Prediction Image" style="width:300px;">
+        <h3 class="alert {{ alert_color }}">Predicted Result is : {{ prediction }}</h3>
+        <a href="/" class="btn">Upload Another Image</a>
+    </div>
+</body>
+</html>
